@@ -20,7 +20,7 @@ export class CheckboxComponent {
 
   handleChange(ev) {
     ev.stopPropagation();
-    this.changed.emit({ chedled: ev.target.checked });
+    this.changed.emit({ checked: ev.target.checked });
   }
 
 }

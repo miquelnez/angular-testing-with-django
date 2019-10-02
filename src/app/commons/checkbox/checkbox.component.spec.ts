@@ -19,9 +19,7 @@ describe('CheckboxComponent', () => {
     component = fixture.componentInstance;
     fixture.detectChanges();
     element = fixture.debugElement.nativeElement;
-    console.log(element);
     elementCheckbox = element.querySelector('input');
-    console.log(elementCheckbox);
     fixture.detectChanges();
   });
 
