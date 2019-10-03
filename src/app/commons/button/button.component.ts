@@ -16,6 +16,7 @@ export class ButtonComponent {
 
   handleClick(ev: any) {
     ev.stopPropagation();
+    console.log('ButtonComponent handleClick');
     this.clicked.emit();
   }
 

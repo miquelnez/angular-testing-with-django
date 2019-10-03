@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CommonsModule } from './commons/commons.module';
+import { TodoListsModule } from './todo-lists/todo-lists.module';
 
 @NgModule({
   declarations: [
@@ -13,6 +14,7 @@ import { CommonsModule } from './commons/commons.module';
     BrowserModule,
     AppRoutingModule,
     CommonsModule,
+    TodoListsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
