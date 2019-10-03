@@ -34,4 +34,9 @@ export class CheckboxComponent {
     this.changed.emit({ checked: ev.target.checked });
   }
 
+  handleClick(ev) {
+    console.log('handleClick');
+    ev.stopPropagation();
+    console.log('CheckboxComponent handleClick', ev.target.checked);
+  }
 }
