@@ -3,7 +3,6 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { CommonsModule } from './commons/commons.module';
 import { TodoListsModule } from './todo-lists/todo-lists.module';
 
 @NgModule({
@@ -13,7 +12,6 @@ import { TodoListsModule } from './todo-lists/todo-lists.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    CommonsModule,
     TodoListsModule,
   ],
   providers: [],

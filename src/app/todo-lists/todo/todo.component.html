@@ -1,3 +1,8 @@
-<p>todo works!</p>
-<app-button></app-button>
-<app-checkbox></app-checkbox>
+
+<app-checkbox
+  [name]="todo.id"
+  [label]="todo.title"
+  [checked]="todo?.status === 'CO' ? true : false"
+  [disabled]= "todo?.status === 'AR' ? true : false"
+></app-checkbox>
+<app-button>Completada</app-button>

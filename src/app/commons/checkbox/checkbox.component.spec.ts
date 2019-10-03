@@ -3,7 +3,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { CheckboxComponent } from './checkbox.component';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
 
-describe('CheckboxComponent', () => {
+fdescribe('CheckboxComponent', () => {
   let component: CheckboxComponent;
   let fixture: ComponentFixture<CheckboxComponent>;
   let element: HTMLElement;
@@ -27,7 +27,27 @@ describe('CheckboxComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('click on a checkbox should emit a changed event', () => {
+  fdescribe('when checkbox is clicked', () => {
+    it('and disabled should not emit a changed event', () => {
+      component.disabled = true;
+      fixture.detectChanges();
+      spyOn(component.changed, 'emit');
+      elementCheckbox.dispatchEvent(new Event('click'));
+      fixture.detectChanges();
+      expect(component.changed.emit).not.toHaveBeenCalled();
+    });
+
+    it('and not disabled should emit a changed event', () => {
+      component.disabled = false;
+      fixture.detectChanges();
+      spyOn(component.changed, 'emit');
+      elementCheckbox.dispatchEvent(new Event('click'));
+      fixture.detectChanges();
+      expect(component.changed.emit).toHaveBeenCalled();
+    });
+  });
+
+  it('emit change on a checkbox as default should emit a changed event', () => {
     spyOn(component.changed, 'emit');
     elementCheckbox.dispatchEvent(new Event('change'));
     fixture.detectChanges();

@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Todo } from '../models';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-todo',
@@ -7,9 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TodoComponent implements OnInit {
 
-  constructor() { }
+  @Input()
+  todo: Todo;
+
+  constructor() {
+    this.todo = {
+      id: 0,
+      title: '',
+      status: 'AR'
+    };
+  }
 
   ngOnInit() {
   }
-
 }

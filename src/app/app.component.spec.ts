@@ -2,13 +2,14 @@ import { TestBed, async } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { CommonsModule } from './commons/commons.module';
 import { AppComponent } from './app.component';
+import { TodoListsModule } from './todo-lists/todo-lists.module';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [
         RouterTestingModule,
-        CommonsModule,
+        TodoListsModule,
       ],
       declarations: [
         AppComponent
