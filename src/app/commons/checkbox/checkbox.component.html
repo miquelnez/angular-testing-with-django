@@ -1,1 +1,12 @@
-<input type="checkbox" [checked]="checked" (change)="handleChange($event)">
+<input
+  id="{{ name }}"
+  name="{{ name }}"
+  type="checkbox"
+  [checked]="checked"
+  (change)="handleChange($event)"
+>
+<label
+  for="{{ name }}"
+>
+  {{ label }}
+</label>
