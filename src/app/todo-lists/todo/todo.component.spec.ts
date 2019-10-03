@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { TodoComponent } from './todo.component';
+import { CommonsModule } from 'src/app/commons/commons.module';
+import { NO_ERRORS_SCHEMA } from '@angular/core';
 
 describe('TodoComponent', () => {
   let component: TodoComponent;
@@ -8,7 +10,9 @@ describe('TodoComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ TodoComponent ]
+      imports: [ CommonsModule ],
+      declarations: [ TodoComponent ],
+      // schemas: [NO_ERRORS_SCHEMA],
     })
     .compileComponents();
   }));
