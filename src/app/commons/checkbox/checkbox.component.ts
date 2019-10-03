@@ -10,6 +10,9 @@ export class CheckboxComponent {
   checked: boolean;
 
   @Input()
+  disabled: boolean;
+
+  @Input()
   label: string;
 
   @Input()
@@ -25,6 +28,7 @@ export class CheckboxComponent {
   }
 
   handleChange(ev) {
+    console.log('handleChange');
     ev.stopPropagation();
     this.changed.emit({ checked: ev.target.checked });
   }

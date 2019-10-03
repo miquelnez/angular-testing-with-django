@@ -1,6 +1,8 @@
-<app-button></app-button>
+
 <app-checkbox
-  [name]="'name'"
-  [label]="'label'"
-  [checked]="false"
+  [name]="todo.id"
+  [label]="todo.title"
+  [checked]="todo?.status === 'CO' ? true : false"
+  [disabled]= "todo?.status === 'AR' ? true : false"
 ></app-checkbox>
+<app-button>Completada</app-button>
