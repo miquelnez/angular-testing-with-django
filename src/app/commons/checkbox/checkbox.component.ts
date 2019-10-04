@@ -28,10 +28,11 @@ export class CheckboxComponent {
   }
 
   handleChange(ev: Event) {
+    const evTarget = ev.target as HTMLInputElement;
     console.log('handleChange');
     ev.stopPropagation();
-    console.log('CheckboxComponent handleChange', ev.target.checked);
-    this.changed.emit({ checked: ev.target.checked as HTMLInputElement });
+    console.log('CheckboxComponent handleChange', evTarget.checked);
+    this.changed.emit({ checked: evTarget.checked  });
   }
 
   handleClick(ev) {
