@@ -22,4 +22,12 @@ export class TodoComponent implements OnInit {
 
   ngOnInit() {
   }
+
+  handleChanged(ev) {
+
+  }
+
+  handleClicked(ev) {
+
+  }
 }

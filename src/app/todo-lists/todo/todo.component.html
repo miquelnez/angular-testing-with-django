@@ -4,5 +4,10 @@
   [label]="todo.title"
   [checked]="todo?.status === 'CO' ? true : false"
   [disabled]= "todo?.status === 'AR' ? true : false"
+  (changed)="handleChanged($event)"
 ></app-checkbox>
-<app-button>Completada</app-button>
+<app-button
+(clicked)="handleClicked($event)"
+>
+  Completada
+</app-button>
