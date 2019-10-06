@@ -1,4 +1,4 @@
-import { Component, Output, EventEmitter } from '@angular/core';
+import { Component, Output, EventEmitter, Input } from '@angular/core';
 
 @Component({
   selector: 'app-button',
@@ -7,10 +7,14 @@ import { Component, Output, EventEmitter } from '@angular/core';
 })
 export class ButtonComponent {
 
+  @Input()
+  disabled: boolean;
+
   @Output()
   clicked: EventEmitter<void>;
 
   constructor() {
+    this.disabled = false;
     this.clicked = new EventEmitter<void>();
   }
 
