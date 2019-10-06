@@ -5,6 +5,7 @@
   [checked]="todo?.status === 'CO' ? true : false"
   [disabled]= "todo?.status === 'AR' ? true : false"
   (changed)="handleChanged($event)"
+  [ngClass]="{completed: todo?.status === 'AR'}"
 ></app-checkbox>
 <app-button
   [disabled]= "todo?.status === 'AR' ? true : false"
