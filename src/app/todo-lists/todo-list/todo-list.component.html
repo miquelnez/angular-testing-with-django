@@ -1,1 +1,8 @@
-<p>todo-list works!</p>
+<ul>
+  <li *ngFor="let todo of todos; trackBy: trackByTodoId;">
+    <app-todo
+      [todo]="todo"
+    ></app-todo>
+  </li>
+</ul>
+<pre [innerHtml]="todos | json"></pre>
