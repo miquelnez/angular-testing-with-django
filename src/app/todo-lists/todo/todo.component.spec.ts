@@ -39,8 +39,6 @@ describe('TodoComponent', () => {
     hostComponent = fixture.componentInstance;
     component = hostComponent.child;
     element = fixture.debugElement.nativeElement;
-    elementCheckbox = element.querySelector('input');
-    elementButton = element.querySelector('button');
 
     hostComponent.todo = {
       id: 0,
@@ -84,12 +82,14 @@ describe('TodoComponent', () => {
             status: 'AR'
           };
           fixture.detectChanges();
+          elementCheckbox = element.querySelector('input');
+          elementButton = element.querySelector('button');
         });
         it('should has the checkbox disabled', () => {
           expect(elementCheckbox.disabled).toBeTruthy();
         });
-        it('should has the button disabled', () => {
-          expect(elementButton.disabled).toBeTruthy();
+        it('should has no button', () => {
+          expect(elementButton).toBeNull();
         });
       });
 
@@ -101,6 +101,8 @@ describe('TodoComponent', () => {
             status: 'IN'
           };
           fixture.detectChanges();
+          elementCheckbox = element.querySelector('input');
+          elementButton = element.querySelector('button');
         });
         it('should has the checkbox enabled', () => {
           expect(elementCheckbox.disabled).toBeFalsy();
@@ -119,6 +121,8 @@ describe('TodoComponent', () => {
             status: 'CO'
           };
           fixture.detectChanges();
+          elementCheckbox = element.querySelector('input');
+          elementButton = element.querySelector('button');
         });
         it('should has the checkbox enabled', () => {
           expect(elementCheckbox.disabled).toBeFalsy();
